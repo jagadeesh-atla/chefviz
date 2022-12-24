@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./src/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -30,7 +30,7 @@
 
     <h1 class="title">CODECHEF VISUALIZER</h1>
     <div class="grid">
-        <form action="/report" method="POST" class="form login">
+        <form class="form login" method="post" id="form_id">
             <div class="form__field">
                 <label for="handel"><i class="fa-solid fa-user"></i>
                 </label>
@@ -38,7 +38,7 @@
                     autocomplete="off" required>
             </div>
             <div class="form__field">
-                <input type="submit" value="submit">
+                <input type="submit" value="submit" onclick="myfunction()">
             </div>
         </form>
     </div>
@@ -48,9 +48,17 @@
             <h4>MADE WITH JS</h4>
             <a href="http://github.com"><i class="fa-brands fa-github"></i></a>
         </div>
-
     </footer>
 
+    <script type="text/javascript">
+        function myfunction() {
+            let handel = document.getElementById("username").value.trim();
+            if (handel !== '') {
+                document.getElementById("form_id").action = handel;
+                document.getElementById("form_id").submit();
+            }
+        }
+    </script>
 </body>
 
 </html>
